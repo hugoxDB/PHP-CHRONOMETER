@@ -1,4 +1,8 @@
 <?php
+
+//SOLVE THE HTTP PROTOCOL PROBLEM
+header( $_ENV['SERVER_PROTOCOL']." 404 Not Found", true );
+
 //ENABLE CODE ERROR DISPLAY
 ini_set('display_errors',1);
 ini_set('display_startup_erros',1);
@@ -13,7 +17,6 @@ $explode_time = explode(':',$current_time);
 
 $time = array('hour' => $explode_time[0], 'minutes' => $explode_time[1], 'seconds' => $explode_time[2]);
 
-
 ?>
 
 <!DOCTYPE html>
@@ -21,16 +24,29 @@ $time = array('hour' => $explode_time[0], 'minutes' => $explode_time[1], 'second
 <head>
 	<title>CHRONOMETER</title>
 	<meta charset="utf-8">
+	<link rel="shortcut icon" href="#" />
+
+	<script type="text/javascript">
+		var time_hour = <?php echo $time['hour']; ?>;
+		var time_minutes = <?php echo $time['minutes']; ?>;
+		var time_seconds = <?php echo $time['seconds']; ?>;
+
+		
+
+	</script>
 </head>
+
 <body>
 
 	<div class="container">
-		<div class="box-chronometer">
+		<div id="box-chronometer">
 			
-
+				asas
 		</div>
 
 	</div>
+
+
 
 </body>
 </html>
